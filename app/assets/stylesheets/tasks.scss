@@ -1,0 +1,107 @@
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+  margin: 0 auto;
+  width: 700px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(50, 47, 51);
+  position: relative;
+}
+
+.link-to {
+  .new-task {
+    position: absolute;
+    right: 0px;
+  }
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: rgb(50, 47, 51);
+  background-color: white;
+  background-clip: padding-box; /* !importanté */
+  transition: 0.8s ease;
+  border-bottom: solid 5px transparent; /* !importanté */
+    &:hover {
+      border-bottom: solid 5px #FF42AA;
+    }
+}
+
+.task-list {
+  list-style: none;
+  padding: 0px;
+  color: black;
+}
+
+li {
+  display: flex;
+  justify-content: left;
+  padding: 16px;
+  background-color: white;
+  border-radius: 16px;
+  margin: 16px 0px;
+
+  $border: 5px;
+  background-clip: padding-box; /* !importanté */
+  transition: 0.8s ease;
+  border: solid $border transparent; /* !importanté */
+    &:hover {
+      border: solid $border #FF42AA;
+      .trash {
+        color: #FF42AA;
+        transition: 0.8s ease;
+      }
+    }
+  border-radius: 1em;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -1;
+    margin: -$border;
+    border-radius: inherit;
+    background: linear-gradient(to right, #FF42AA, #29E5E2);
+  }
+}
+
+i {
+  width: 32px;
+  height: auto;
+  font-size: 32px;
+  margin-right: 16px;
+  margin-left: 4px;
+}
+
+.trash {
+  margin: 0px;
+  color: #29E5E2;
+}
+
+.unchecked {
+  font-weight: lighter;
+  color: #FF42AA;
+}
+
+.checked {
+  color: #FF42AA;
+}
+
+.task-title {
+  flex-grow: 1;
+  font-family: sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgb(50, 47, 51);
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 140%;
+  vertical-align: middle;
+}
